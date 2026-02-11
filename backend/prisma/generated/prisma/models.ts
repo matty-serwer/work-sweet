@@ -8,8 +8,8 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/User'
-export type * from './models/Project'
-export type * from './models/Task'
-export type * from './models/ChecklistItem'
+export type * from './models/checklist_items'
+export type * from './models/projects'
+export type * from './models/tasks'
+export type * from './models/users'
 export type * from './commonInputTypes'

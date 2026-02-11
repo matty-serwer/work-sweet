@@ -12,6 +12,8 @@
 
 import * as process from 'node:process'
 import * as path from 'node:path'
+import { fileURLToPath } from 'node:url'
+globalThis['__dirname'] = path.dirname(fileURLToPath(import.meta.url))
 
 import * as runtime from "@prisma/client/runtime/client"
 import * as $Enums from "./enums"
@@ -27,8 +29,8 @@ export * from "./enums"
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Users
- * const users = await prisma.user.findMany()
+ * // Fetch zero or more Checklist_items
+ * const checklist_items = await prisma.checklist_items.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -38,22 +40,22 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
- * Model User
+ * Model checklist_items
  * 
  */
-export type User = Prisma.UserModel
+export type checklist_items = Prisma.checklist_itemsModel
 /**
- * Model Project
+ * Model projects
  * 
  */
-export type Project = Prisma.ProjectModel
+export type projects = Prisma.projectsModel
 /**
- * Model Task
+ * Model tasks
  * 
  */
-export type Task = Prisma.TaskModel
+export type tasks = Prisma.tasksModel
 /**
- * Model ChecklistItem
+ * Model users
  * 
  */
-export type ChecklistItem = Prisma.ChecklistItemModel
+export type users = Prisma.usersModel

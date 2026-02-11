@@ -51,10 +51,10 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User',
-  Project: 'Project',
-  Task: 'Task',
-  ChecklistItem: 'ChecklistItem'
+  checklist_items: 'checklist_items',
+  projects: 'projects',
+  tasks: 'tasks',
+  users: 'users'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -73,21 +73,20 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const UserScalarFieldEnum = {
+export const Checklist_itemsScalarFieldEnum = {
   id: 'id',
-  name: 'name',
-  email: 'email',
-  password: 'password',
-  avatarColor: 'avatarColor',
-  active: 'active',
+  text: 'text',
+  completed: 'completed',
+  position: 'position',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  taskId: 'taskId'
 } as const
 
-export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+export type Checklist_itemsScalarFieldEnum = (typeof Checklist_itemsScalarFieldEnum)[keyof typeof Checklist_itemsScalarFieldEnum]
 
 
-export const ProjectScalarFieldEnum = {
+export const ProjectsScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
@@ -98,10 +97,10 @@ export const ProjectScalarFieldEnum = {
   ownerId: 'ownerId'
 } as const
 
-export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
+export type ProjectsScalarFieldEnum = (typeof ProjectsScalarFieldEnum)[keyof typeof ProjectsScalarFieldEnum]
 
 
-export const TaskScalarFieldEnum = {
+export const TasksScalarFieldEnum = {
   id: 'id',
   title: 'title',
   description: 'description',
@@ -116,20 +115,21 @@ export const TaskScalarFieldEnum = {
   assignedToId: 'assignedToId'
 } as const
 
-export type TaskScalarFieldEnum = (typeof TaskScalarFieldEnum)[keyof typeof TaskScalarFieldEnum]
+export type TasksScalarFieldEnum = (typeof TasksScalarFieldEnum)[keyof typeof TasksScalarFieldEnum]
 
 
-export const ChecklistItemScalarFieldEnum = {
+export const UsersScalarFieldEnum = {
   id: 'id',
-  text: 'text',
-  completed: 'completed',
-  position: 'position',
+  name: 'name',
+  email: 'email',
+  password: 'password',
+  avatarColor: 'avatarColor',
+  active: 'active',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  taskId: 'taskId'
+  updatedAt: 'updatedAt'
 } as const
 
-export type ChecklistItemScalarFieldEnum = (typeof ChecklistItemScalarFieldEnum)[keyof typeof ChecklistItemScalarFieldEnum]
+export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
 
 
 export const SortOrder = {
