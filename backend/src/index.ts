@@ -1,6 +1,8 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import authRoutes from "./routes/authRoutes";
+import { errorHandler } from "./middleware/errorHandler";
 
 dotenv.config();
 
@@ -25,6 +27,12 @@ app.get("/api/health", (req: Request, res: Response) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+// Routes
+app.use("/api/auth", authRoutes);
+
+// Error handler (must be last)
+app.use(errorHandler);
 
 // Start server
 app.listen(port, () => {
